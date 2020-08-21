@@ -25,9 +25,6 @@ yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
     }
 
     stage('Test') {
-      environment {
-        CI = 'true'
-      }
       steps {
         sh './jenkins/scripts/test.sh'
       }
@@ -41,5 +38,8 @@ yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
       }
     }
 
+  }
+  environment {
+    CI = 'true'
   }
 }
